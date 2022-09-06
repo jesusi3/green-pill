@@ -1,4 +1,5 @@
 const Schema = require('mongoose').Schema;
+require('./mainCategory');
 
 const itemSchema = new Schema({
     name: { type: String, required: true },
@@ -9,4 +10,4 @@ const itemSchema = new Schema({
     timestamps: true
 })
 
-module.exports = itemSchema;
+module.exports = ('Item', itemSchema);

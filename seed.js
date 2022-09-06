@@ -1,8 +1,13 @@
+require('dotenv').config();
+require('./config/database');
 
+const MainCat = require('./models/mainCategory');
+const Category = require('./models/category');
+const Item = require('./models/item');
 
 (async function() {
-    await MainCategory.deleteMany({});
-    const mainCategories = await MainCategory.create([
+    await MainCat.deleteMany({});
+    const mainCategories = await MainCat.create([
     {name: 'Supplement'},
     {name: 'Equipment'},]);
     
@@ -74,4 +79,7 @@
         {name: 'Body-Solid Seated Row Machine', img: 'https://cdn-cmmnj.nitrocdn.com/hWdqgBUqVSYeeDweoutlDraZjiiHKsDt/assets/static/optimized/rev-57f633e/wp-content/uploads/2010/12/Body-Solid-Seated-Row-Machine-GSRM40.png', category: categories[9], price: 696.00},
         {name: 'Lat Pulldown Machine', img: 'https://www.lifefitness.co.uk/resource/image/57006/portrait_ratio1x1/400/400/a3a9e592ab20e95206268b1ceb7a8ba0/bI/hammer-strength-select-lat-pulldown-l.png', category: categories[9], price: 3065.00},
     ]);
+    console.log(items)
+
+    process.exit();
 })
