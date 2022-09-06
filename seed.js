@@ -1,29 +1,29 @@
 require('dotenv').config();
 require('./config/database');
 
-const MainCat = require('./models/mainCategory');
-const Category = require('./models/categorySchema');
-const Item = require('./models/itemSchema');
+// const MainCat = require('./models/mainCategory');
+const Category = require('./models/category');
+const Item = require('./models/item');
 
 (async function() {
-    await MainCat.deleteMany({});
-    const mainCategories = await MainCat.create([
-    {name: 'Supplement'},
-    {name: 'Equipment'},]);
+    // await MainCat.deleteMany({});
+    // const mainCategories = await MainCat.create([
+    // {name: 'Supplement'},
+    // {name: 'Equipment'},]);
     
 
     await Category.deleteMany({});
     const categories = await Category.create([
-        {name: 'Protein', sect: mainCategories[0] ,sortOrder: 10},
-        {name: 'Pre-Workout', sect: mainCategories[0] ,sortOrder: 20},
-        {name: 'Mass Gainers', sect: mainCategories[0] ,sortOrder: 30},
-        {name: 'Vitamins & Health', sect: mainCategories[0] ,sortOrder: 30},
-        {name: 'Creatine', sect: mainCategories[0] ,sortOrder: 30},
-        {name: 'Dumbbells', sect: mainCategories[1] ,sortOrder: 30},
-        {name: 'Weight Plates', sect: mainCategories[1] ,sortOrder: 40},
-        {name: 'Power Racks', sect: mainCategories[1] ,sortOrder: 50},
-        {name: 'Cardio MAchines', sect: mainCategories[1] ,sortOrder: 60},
-        {name: 'Weight Machines', sect: mainCategories[1] ,sortOrder: 70},
+        {name: 'Protein', category: 'Supplements' ,sortOrder: 10},
+        {name: 'Pre-Workout', category: 'Supplements' ,sortOrder: 20},
+        {name: 'Mass Gainers', category: 'Supplements' ,sortOrder: 30},
+        {name: 'Vitamins & Health', category: 'Supplements' ,sortOrder: 40},
+        {name: 'Creatine', category: 'Supplements' ,sortOrder: 50},
+        {name: 'Dumbbells', category: 'Equipment' ,sortOrder: 60},
+        {name: 'Weight Plates', category: 'Equipment' ,sortOrder: 70},
+        {name: 'Power Racks', category: 'Equipment' ,sortOrder: 80},
+        {name: 'Cardio MAchines', category: 'Equipment' ,sortOrder: 90},
+        {name: 'Weight Machines', category: 'Equipment' ,sortOrder: 100},
     ]);
     
     await Item.deleteMany({});

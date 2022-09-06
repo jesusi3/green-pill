@@ -1,12 +1,11 @@
-const Item = require('../../models/itemSchema');
+const Item = require('../../models/item');
 module.exports = {
     index,
 }
 
-async function index(req, res) {
-   
-    const items = await Item.find({}).populate( [{ path: 'category', populate: { path: 'sect' } }]).exec();
-    // console.log(items)
+async function index(req, res) {  
+    const items = await Item.find({}).populate('category').exec();
+    items.sort((a, b) => a.category.sortOrder - b.category.sortOrder);
     res.json(items);
-    console.log(items);
+
 }

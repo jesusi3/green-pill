@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-require('./mainCategory');
+// require('./mainCategory');
 
 
 const categorySchema = new Schema({
     name: {type: String, required: true},
-    sect: {type: Schema.Types.ObjectId, ref: 'MainCat'},
+    category: {type: String, required: true},
     sortOrder: Number,
 }, { 
     timestamps: true
