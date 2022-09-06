@@ -1,5 +1,4 @@
-const Category = require('../../models/categorySchema');
-const Item = require('../../models/item');
+const Item = require('../../models/itemSchema');
 module.exports = {
     index,
 }
@@ -7,6 +6,7 @@ module.exports = {
 async function index(req, res) {
    
     const items = await Item.find({}).populate( [{ path: 'category', populate: { path: 'sect' } }]).exec();
-    console.log(items)
+    // console.log(items)
     res.json(items);
+    console.log(items);
 }

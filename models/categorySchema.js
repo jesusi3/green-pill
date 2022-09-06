@@ -1,4 +1,5 @@
-const Schema = require('mongoose').Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 require('./mainCategory');
 
 
@@ -10,4 +11,4 @@ const categorySchema = new Schema({
     timestamps: true
 });
 
-module.exports = ('Category',categorySchema);
+module.exports = mongoose.model('Category',categorySchema);

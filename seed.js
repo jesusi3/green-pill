@@ -2,8 +2,8 @@ require('dotenv').config();
 require('./config/database');
 
 const MainCat = require('./models/mainCategory');
-const Category = require('./models/category');
-const Item = require('./models/item');
+const Category = require('./models/categorySchema');
+const Item = require('./models/itemSchema');
 
 (async function() {
     await MainCat.deleteMany({});
@@ -82,4 +82,4 @@ const Item = require('./models/item');
     console.log(items)
 
     process.exit();
-})
+})();

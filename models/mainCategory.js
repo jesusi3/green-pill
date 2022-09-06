@@ -7,4 +7,4 @@ const mainCatSchema = new Schema({
     timestamps: true
 });
  
-module.exports = ('MainCat', mainCatSchema);
+module.exports = mongoose.model('MainCat', mainCatSchema);
