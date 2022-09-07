@@ -1,0 +1,24 @@
+body {
+    min-height: 100vh;
+    background-color: aliceblue;
+  }
+
+.navbar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    /* margin-left: -300px; */
+    background-color:blueviolet;
+    transition: 0.4s;
+
+}
+
+.nav-link {
+    font-size: 1.25em;
+}
+
+.nav-link:active,
+.nav-link:focus,
+.nav-link:hover {
+    background-color: brown;
+}

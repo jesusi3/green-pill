@@ -1,0 +1,12 @@
+.custom_class {
+    color: white;
+}
+
+.size_class {
+    object-fit: contain;
+    height: 50vmin;
+}
+
+.Content_class {
+    font-size: 4vmin;
+}

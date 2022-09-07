@@ -22,7 +22,7 @@ const Item = require('./models/item');
         {name: 'Dumbbells', category: 'Equipment' ,sortOrder: 60},
         {name: 'Weight Plates', category: 'Equipment' ,sortOrder: 70},
         {name: 'Power Racks', category: 'Equipment' ,sortOrder: 80},
-        {name: 'Cardio MAchines', category: 'Equipment' ,sortOrder: 90},
+        {name: 'Cardio Machines', category: 'Equipment' ,sortOrder: 90},
         {name: 'Weight Machines', category: 'Equipment' ,sortOrder: 100},
     ]);
     

@@ -1,36 +1,55 @@
 import { useState, useEffect, useRef} from 'react';
 import * as itemsAPI from '../../utilities/items-api';
-import SupplementsPage from '../../components/SupplementsPage/SupplementsPage';
-import EquipmentPage from '../../components/EquipmentPage/EquipmentPage';
-
+import SupplementCat from '../../components/SupplementCat/SupplementCat';
+import EquipmentCat from '../../components/EquipmentCat/EquipmentCat';
+import MenuList from '../../components/MenuList/MenuList'
+ 
 export default function NewOrderPage() {
   const [mainCat, setMainCat] = useState(true);
   const [menuItem, setMenuItem] = useState([]);
-  const [activeCat, setAcativeCat] = useState('');
-  const categoriesRef = useRef([]);
+  const [equipActiveCat, setEquipActiveCat] = useState('');
+  const [supActiveCat, setSupActiveCat] = useState('');
+  const supplementRef = useRef([]);
+  const equipmentRef = useRef([]);
     useEffect( function() {
       async function getAll() {
         const items = await itemsAPI.getAll();
-        categoriesRef.current = [...new Set(items.map(item => item.category.name))];
+        const five =  await items.filter((c) =>  c.category.category.includes('Supplements'));
+        supplementRef.current = [...new Set(five.map((m) => m.category.name))];
+        const four =  await items.filter((c) =>  c.category.category.includes('Equipment'));
+        equipmentRef.current = [...new Set(four.map((m) => m.category.name))];
         setMenuItem(items);
-        setAcativeCat(categoriesRef.current[0]);
+        setSupActiveCat(supplementRef.current[0]);
+        setEquipActiveCat(equipmentRef.current[0]);
       }
       getAll();
-
     }, []);
-
-    const getMainSup = menuItem.filter(item = item.category.category === "Supplements")
-    const getMainEquip = menuItem.filter(item = item.category.category === "Equipment")
-
+    
+    
+   
+ 
   return (
-    <div class="container-fluid">
-      <h1>NewOrderPage</h1>
+    <div className="container-fluid">
+      {/* <h1 onClick={getSupCat}>NewOrderPage</h1> */}
+      <button onClick={() => setMainCat(!mainCat)} type="button" className="btn btn-dark btn-sm">{mainCat ? 'Equipment' : 'Supplements'}</button>
       {mainCat ?
-      <SupplementsPage categories={categoriesRef.current} />
-      :
-      <EquipmentPage />
+        <>
+          <SupplementCat
+            categories={supplementRef.current}
+            activeCat={supActiveCat}
+            setActiveCat={setSupActiveCat}
+          />
+          <MenuList menuItems={menuItem.filter(x => x.category.name === supActiveCat)}/>
+        </>
+        :
+        <EquipmentCat
+          categories={equipmentRef.current}
+          activeCat={equipActiveCat}
+          setActiveCat={setEquipActiveCat}
+        />
       }
-      <button onClick={() => setMainCat(!mainCat)} type="button" class="btn btn-dark">{mainCat ? 'Equipment' : 'Supplements'}</button>
+ 
     </div>
   );
 }
+
