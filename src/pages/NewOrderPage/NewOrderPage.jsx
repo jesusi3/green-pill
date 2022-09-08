@@ -42,11 +42,14 @@ export default function NewOrderPage() {
           <MenuList menuItems={menuItem.filter(x => x.category.name === supActiveCat)}/>
         </>
         :
-        <EquipmentCat
-          categories={equipmentRef.current}
-          activeCat={equipActiveCat}
-          setActiveCat={setEquipActiveCat}
-        />
+        <>
+          <EquipmentCat
+            categories={equipmentRef.current}
+            activeCat={equipActiveCat}
+            setActiveCat={setEquipActiveCat}
+          />
+        <MenuList menuItems={menuItem.filter(x => x.category.name === equipActiveCat)}/>
+       </> 
       }
  
     </div>

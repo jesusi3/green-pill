@@ -1,5 +1,7 @@
 .custom_class {
     color: white;
+    /* display: flex; */
+    justify-content: center;
 }
 
 .size_class {
@@ -9,4 +11,5 @@
 
 .Content_class {
     font-size: 4vmin;
+    margin: 10px ;
 }
