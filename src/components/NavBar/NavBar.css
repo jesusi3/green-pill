@@ -4,12 +4,13 @@ body {
     padding: 0px;
   }
 .nav-bar {
-    background-color: aqua;
+    background-color: #152238;
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
     height: 10vh;
+    color: white;
 }
 
 .item-container {
@@ -23,6 +24,7 @@ a, p {
     font-size: 2vw;
     justify-content: center;
     text-decoration: none;
+    color: white;
 }
 
 #item-container-end {

@@ -1,0 +1,23 @@
+.hi {
+    border: solid 1px black;
+    
+    position: fixed;
+    right: 3%;
+    top: 50%;
+    background-color: white;
+    z-index: 100;
+
+    height: 300px;
+    margin-top: -40vh;
+
+    width: 300px;
+    margin-left: -300px;
+    border-radius: 5px;
+    opacity: 0.9;
+}
+
+.total {
+    position: absolute;
+    margin-top: 200px;
+
+}

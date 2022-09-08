@@ -4,6 +4,7 @@ import * as ordersAPI from '../../utilities/orders-api';
 import SupplementCat from '../../components/SupplementCat/SupplementCat';
 import EquipmentCat from '../../components/EquipmentCat/EquipmentCat';
 import MenuList from '../../components/MenuList/MenuList'
+import OrderDetail from '../../components/OrderDetail/OrderDetail';
  
 export default function NewOrderPage() {
   const [mainCat, setMainCat] = useState(true);
@@ -44,6 +45,7 @@ export default function NewOrderPage() {
       <button onClick={() => setMainCat(!mainCat)} type="button" className="btn btn-dark btn-sm">{mainCat ? 'Equipment' : 'Supplements'}</button>
       {mainCat ?
         <>
+        <OrderDetail order={cart}/>
           <SupplementCat
             categories={supplementRef.current}
             activeCat={supActiveCat}
@@ -61,7 +63,6 @@ export default function NewOrderPage() {
         <MenuList menuItems={menuItem.filter(x => x.category.name === equipActiveCat)}/>
        </> 
       }
- 
     </div>
   );
 }

@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-require('./itemSchema');
+const itemSchema = require('./itemSchema');
 
 const lineItemSchema = new Schema({
     qty: { type: Number, default: 1},
     item: itemSchema
 }, {
     timestamps: true,
-    toJson: { virtuals: true }
+    toJSON: { virtuals: true }
 });
 
 lineItemSchema.virtual('extPrice').get(function () {
@@ -17,24 +17,34 @@ lineItemSchema.virtual('extPrice').get(function () {
 
 
 const orderSchema = new Schema({
-    user: { type: Schema.Types.ObjectId, ref: 'User', required:true},
+    user: { type: Schema.Types.ObjectId, ref: 'User'},
     lineItems: [lineItemSchema],
     isPaid: {type: Boolean, default: false},
 },{ 
     timestamps: true,
-    toJson: { virtuals: true }
+    toJSON: { virtuals: true }
 });
 
-orderSchema.virtuals('orderTotal').get(function() {
-    return this.lineItems.reduce((total, item) => total + item.extPrice, 0);
-})
 
-orderSchema.virtuals('totalQty').get(function() {
-    return this.lineItems.reduce((total,item) => total + item.qty, 0);
-})
+orderSchema.virtual('orderTotal').get(function() {
+  return this.lineItems.reduce((total, item) => total + item.extPrice, 0);
+});
 
-orderSchema.virtuals('orderId').get(function() {
-    return this.id.slice(-6).toUpperCase();
-})
+orderSchema.virtual('totalQty').get(function() {
+  return this.lineItems.reduce((total, item) => total + item.qty, 0);
+});
+
+orderSchema.virtual('orderId').get(function() {
+  return this.id.slice(-6).toUpperCase();
+});
+
+orderSchema.statics.getCart = function(userId) {
+    return this.findOneAndUpdate(
+        {user: userId, isPaid: false},
+        {user: userId},
+        {upsert: true, new: true }
+    );
+}
+
 
 module.exports = mongoose.model('Order', orderSchema);
