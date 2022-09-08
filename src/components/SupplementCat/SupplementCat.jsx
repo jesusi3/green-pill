@@ -14,7 +14,7 @@ export default function SupplementCat({categories, activeCat, setActiveCat}) {
 
     return (
         <>
-        <ul className="justify-content-center bg-light">
+        <ul className="navbar justify-content-center bg-light">
             {cats}
         </ul>    
         <h1>Supplements</h1>

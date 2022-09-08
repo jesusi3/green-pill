@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef} from 'react';
 import * as itemsAPI from '../../utilities/items-api';
+import * as ordersAPI from '../../utilities/orders-api';
 import SupplementCat from '../../components/SupplementCat/SupplementCat';
 import EquipmentCat from '../../components/EquipmentCat/EquipmentCat';
 import MenuList from '../../components/MenuList/MenuList'
@@ -9,6 +10,7 @@ export default function NewOrderPage() {
   const [menuItem, setMenuItem] = useState([]);
   const [equipActiveCat, setEquipActiveCat] = useState('');
   const [supActiveCat, setSupActiveCat] = useState('');
+  const [cart, setCart] = useState(null);
   const supplementRef = useRef([]);
   const equipmentRef = useRef([]);
     useEffect( function() {
@@ -23,6 +25,14 @@ export default function NewOrderPage() {
         setEquipActiveCat(equipmentRef.current[0]);
       }
       getAll();
+
+    async function getCart() {
+      const cart = await ordersAPI.getCart();
+      setCart(cart);
+    }
+    getCart()
+
+
     }, []);
     
     
