@@ -4,7 +4,8 @@ module.exports= {
     cart,
     addToCart,
     setItemQtyInCart,
-    checkOut
+    checkOut,
+    getUserOrders,
 }
 
 async function cart(req, res) {
@@ -29,4 +30,9 @@ async function checkOut(req, res) {
     cart.isPaid = true;
     await cart.save();
     res.json(cart);
+}
+
+async function getUserOrders(req, res) {
+    const order = await Order.find({user: req.user._id, isPaid: true}).sort('-updatedAt');
+    res.json(order);
 }

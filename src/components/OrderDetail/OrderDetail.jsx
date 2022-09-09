@@ -8,6 +8,7 @@ const lineItems = order.lineItems.map(item =>
     lineItem={item}
     isPaid={order.isPaid}
     handleChangeQty={handleChangeQty}
+    // handleCheckOut={handleCheckOut}
     />
     )
 
@@ -25,6 +26,10 @@ const lineItems = order.lineItems.map(item =>
                     onClick={handleCheckOut}
                     disabled={!lineItems.length}
                     >Checkout</button>
+                    &nbsp;&nbsp;&nbsp;
+                    <span>QTY: {order.totalQty}</span>
+                    &nbsp;&nbsp;&nbsp;
+                    <span>Total:{order.orderTotal.toFixed(2)}</span>
             </div>
         </div>
     );

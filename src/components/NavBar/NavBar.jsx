@@ -16,13 +16,13 @@ export default function NavBar({user, setUser}) {
     <nav>
       <div className='nav-bar'>
         <div className='item-container'>
-          <Link to='#' className=""><FaIcons.FaHome/> Home</Link> 
+          <Link to='#' ><FaIcons.FaHome/> Home</Link> 
           </div>  
         <div className='item-container'>
-          <Link to='/orders' className=""><FaIcons.FaHistory/> Order History</Link>
+          <Link to='/orders' ><FaIcons.FaHistory/> Order History</Link>
           </div>  
       <div className='item-container'>
-        <Link to='/orders/new'className=""><FaIcons.FaShoppingBasket/> New Order</Link>
+        <Link to='/orders/new'><FaIcons.FaShoppingBasket/> New Order</Link>
         
         </div>  
        
@@ -31,7 +31,7 @@ export default function NavBar({user, setUser}) {
           welcome, {user.name}
           </div>  
         <div className='item-container'>
-          <Link to='' onClick={handleLogOut} className="">SignOut <FaIcons.FaSignOutAlt/></Link>
+          <Link to='' onClick={handleLogOut} >SignOut <FaIcons.FaSignOutAlt/></Link>
           </div>  
       </div>  
 

@@ -1,0 +1,6 @@
+.li-item {
+    margin: 15px;
+    list-style: none;
+    border: 2px solid pink;
+    height: 12vh;
+}

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef} from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import * as itemsAPI from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/orders-api';
 import SupplementCat from '../../components/SupplementCat/SupplementCat';
@@ -15,7 +15,7 @@ export default function NewOrderPage() {
   const [cart, setCart] = useState(null);
   const supplementRef = useRef([]);
   const equipmentRef = useRef([]);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
     useEffect( function() {
       async function getAll() {
         const items = await itemsAPI.getAll();
@@ -51,7 +51,7 @@ export default function NewOrderPage() {
 
     async function handleCheckOut() {
       await ordersAPI.checkOut();
-      // navigate('/orders');
+      navigate('/orders');
     }
  
   return (
