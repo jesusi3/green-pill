@@ -15,7 +15,7 @@ const lineItems = order.lineItems.map(item =>
         <div className='OrderDetail'>
             <div className='hi'>
                 <div className='heading'>
-                    <h1>New Order</h1>
+                    <h3>New Order - {order.orderId}</h3>
                 </div>
                 <main className='item1-order'>
                     {lineItems}

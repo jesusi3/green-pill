@@ -1,0 +1,15 @@
+.history {
+    border: 20px solid pink;
+    height: 100vh;
+
+    
+}
+.title-top{
+    display: flex;
+    justify-content: center;
+}
+
+.order-list {
+    display: flex;
+    justify-content: center;
+}
