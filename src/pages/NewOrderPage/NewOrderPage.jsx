@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef} from 'react';
+// import { useNavigate } from 'react-router-dom';
 import * as itemsAPI from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/orders-api';
 import SupplementCat from '../../components/SupplementCat/SupplementCat';
@@ -14,6 +15,7 @@ export default function NewOrderPage() {
   const [cart, setCart] = useState(null);
   const supplementRef = useRef([]);
   const equipmentRef = useRef([]);
+  // const navigate = useNavigate();
     useEffect( function() {
       async function getAll() {
         const items = await itemsAPI.getAll();
@@ -42,12 +44,25 @@ export default function NewOrderPage() {
       setCart(updatedCart)
     }
    
+    async function handleChangeQty(itemId, newQty) {
+      const updatedCart = await ordersAPI.setItemQtyInCart(itemId,newQty);
+      setCart(updatedCart);
+    }
+
+    async function handleCheckOut() {
+      await ordersAPI.checkOut();
+      // navigate('/orders');
+    }
  
   return (
     <div className="container-fluid">
       {/* <h1 onClick={getSupCat}>NewOrderPage</h1> */}
       <button onClick={() => setMainCat(!mainCat)} type="button" className="btn btn-dark btn-sm">{mainCat ? 'Equipment' : 'Supplements'}</button>
-      <OrderDetail order={cart}/>
+      <OrderDetail 
+      order={cart}
+      handleChangeQty={handleChangeQty}
+      handleCheckOut={handleCheckOut}
+      />
       {mainCat ?
         <>
           <SupplementCat

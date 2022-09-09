@@ -1,5 +1,5 @@
 import './LineItem.css';
-export default function LineItem({lineItem, isPaid}) {
+export default function LineItem({lineItem, isPaid, handleChangeQty}) {
      
     return (
         <div className='item-p1'>
@@ -10,14 +10,14 @@ export default function LineItem({lineItem, isPaid}) {
                 {!isPaid &&
                     <button
                     className="btn-xs"
-                    // onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty - 1)}
+                    onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty - 1)}
                     >−</button>
                 }
                 <span>{lineItem.qty}</span>
                 {!isPaid &&
                     <button
                     className="btn-xs"
-                    // onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty + 1)}
+                    onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty + 1)}
                     >+</button>
                 }
                 </div>
