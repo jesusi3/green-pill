@@ -1,8 +1,9 @@
+import LineItem from '../LineItem/LineItem';
 import './OrderDetail.css';
 export default function OrderDetail({order}) {
     if(!order) return 'null';
 const lineItems = order.lineItems.map(item =>
-    <lineItem 
+    <LineItem 
     key={item._id}
     lineItem={item}
     isPaid={order.isPaid}
@@ -15,12 +16,10 @@ const lineItems = order.lineItems.map(item =>
                 <div className='heading'>
                     <h1>New Order</h1>
                 </div>
-                <main>
+                <main className='item1-order'>
                     {lineItems}
                 </main>    
-                <footer className='total'>
-                    <button>Checkout</button>
-                </footer>
+                    <button className='total'>Checkout</button>
             </div>
         </div>
     );

@@ -36,22 +36,29 @@ export default function NewOrderPage() {
 
     }, []);
     
-    
+    async function handleAddToOrder(itemId) {
+      // alert(`add item: ${itemId}`)
+      const updatedCart = await ordersAPI.addToCart(itemId);
+      setCart(updatedCart)
+    }
    
  
   return (
     <div className="container-fluid">
       {/* <h1 onClick={getSupCat}>NewOrderPage</h1> */}
       <button onClick={() => setMainCat(!mainCat)} type="button" className="btn btn-dark btn-sm">{mainCat ? 'Equipment' : 'Supplements'}</button>
+      <OrderDetail order={cart}/>
       {mainCat ?
         <>
-        <OrderDetail order={cart}/>
           <SupplementCat
             categories={supplementRef.current}
             activeCat={supActiveCat}
             setActiveCat={setSupActiveCat}
           />
-          <MenuList menuItems={menuItem.filter(x => x.category.name === supActiveCat)}/>
+          <MenuList 
+          menuItems={menuItem.filter(x => x.category.name === supActiveCat)}
+          handleAddToOrder={handleAddToOrder}
+          />
         </>
         :
         <>
@@ -60,7 +67,10 @@ export default function NewOrderPage() {
             activeCat={equipActiveCat}
             setActiveCat={setEquipActiveCat}
           />
-        <MenuList menuItems={menuItem.filter(x => x.category.name === equipActiveCat)}/>
+        <MenuList 
+        menuItems={menuItem.filter(x => x.category.name === equipActiveCat)}
+        handleAddToOrder={handleAddToOrder}
+        />
        </> 
       }
     </div>

@@ -1,0 +1,15 @@
+
+.item-p1 {
+    margin: 4px;
+    border: 2px solid black;
+}
+
+
+.name {
+    color: black;
+    font-size: 2vh;
+}
+
+.order-qty-total {
+    display: flex;
+}

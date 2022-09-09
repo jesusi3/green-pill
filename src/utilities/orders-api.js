@@ -4,3 +4,7 @@ const BASE_URL = '/api/orders';
 export function getCart() {
     return sendRequest(`${BASE_URL}/cart`);
   }
+
+export function addToCart(itemId) {
+  return sendRequest(`${BASE_URL}/cart/items/${itemId}`, 'POST')
+}
