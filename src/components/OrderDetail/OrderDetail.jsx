@@ -8,7 +8,6 @@ const lineItems = order.lineItems.map(item =>
     lineItem={item}
     isPaid={order.isPaid}
     handleChangeQty={handleChangeQty}
-    // handleCheckOut={handleCheckOut}
     />
     )
 

@@ -1,7 +1,13 @@
 import OrderItem from '../OrderItem/OrderItem';
 import './OrderList.css';
-export default function OrderList({order}) {
-    const ordersItem = order.map(x => <OrderItem key={x._id} order={x}/>) ;
+export default function OrderList({order, selectedOrder, setSelectedOrder}) {
+    const ordersItem = order.map(x => 
+    <OrderItem 
+    key={x._id} 
+    selectedOrder={x === selectedOrder}
+    setSelectedOrder={setSelectedOrder}
+    order={x}
+    />) ;
     console.log(ordersItem);
     return (
         <div className='width'>

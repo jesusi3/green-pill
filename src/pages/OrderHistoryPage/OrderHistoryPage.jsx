@@ -1,14 +1,17 @@
 import { useState ,useEffect } from 'react';
 import * as ordersAPI from '../../utilities/orders-api';
 import OrderList from '../../components/OrderList/OrderList'
+import HistoryDetail from '../../components/HistoryDetail/HistoryDetail';
 import './OrderHistoryPage.css';
 export default function OrderHistoryPage() {
   const [order, setOrder] = useState([]);
+  const [selectedOrder, setSelectedOrder] = useState(null);
 
   useEffect(function () {
     async function getOrderList() {
       const order = await ordersAPI.getOrders();
       setOrder(order);
+      // setSelectedOrder(order[0]);
     }
     getOrderList()
 
@@ -17,13 +20,22 @@ export default function OrderHistoryPage() {
   return (
     <div className="history">
       <div className='title-top' >
-      <h1 >OrderHistoryPage</h1></div>
+        <h1 >OrderHistoryPage</h1>
+      </div>
       <div className='order-list'>
         <ul className='unorder'>
-          {/* {menuItem.filter(x => x.category.name === supActiveCat)} */}
-          <OrderList order={order}/>
+         
+          <OrderList 
+          order={order}
+          selectedOrder={selectedOrder}
+          setSelectedOrder={setSelectedOrder}
+          />
         </ul>
       </div>
+      <HistoryDetail 
+      // order={order}
+      selectedOrder={selectedOrder}
+      />
     </div>
   );
 }
