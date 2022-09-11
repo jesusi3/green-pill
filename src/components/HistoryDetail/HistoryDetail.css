@@ -1,23 +1,26 @@
-.hi {
-    border: solid 1px black;
-    
-    position: fixed;
-    right: 3%;
-    top: 50%;
+.history-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.history-list {
+    border: solid 4px black;
+    position: absolute;
+    top: 30%;
     background-color: white;
-    z-index: 100;
-
     height: 310px;
-    margin-top: -40vh;
-
-    width: 300px;
-    margin-left: -300px;
+    width: 55vw;
     border-radius: 5px;
     opacity: 0.9;
 }
 
-.total {
-  
+.heading-history {
+    display: flex;
+}
+
+.history-total {
     font-size: 2vmin;
 }
 .item1-order {

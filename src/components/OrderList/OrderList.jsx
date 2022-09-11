@@ -8,7 +8,7 @@ export default function OrderList({order, selectedOrder, setSelectedOrder}) {
     setSelectedOrder={setSelectedOrder}
     order={x}
     />) ;
-    console.log(ordersItem);
+    
     return (
         <div className='width'>
             {ordersItem}

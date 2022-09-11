@@ -35,6 +35,7 @@ export default function OrderHistoryPage() {
       <HistoryDetail 
       // order={order}
       selectedOrder={selectedOrder}
+      setSelectedOrder={setSelectedOrder}
       />
     </div>
   );
