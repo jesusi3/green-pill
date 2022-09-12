@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-// require('./mainCategory');
 
 
 const categorySchema = new Schema({
