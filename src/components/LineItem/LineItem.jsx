@@ -11,6 +11,7 @@ export default function LineItem({lineItem, isPaid, handleChangeQty}) {
                     <button
                     className="btn-sm"
                     onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty - 1)}
+                    style={{ backgroundColor:"#152238", color:"white"}}
                     >−</button>
                 }
                 <span>{lineItem.qty}</span>
@@ -18,6 +19,7 @@ export default function LineItem({lineItem, isPaid, handleChangeQty}) {
                     <button
                     className="btn-sm"
                     onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty + 1)}
+                    style={{ backgroundColor:"#152238", color:"white"}}
                     >+</button>
                 }
                 </div>

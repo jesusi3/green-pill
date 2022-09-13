@@ -15,7 +15,7 @@ const lineItems = order.lineItems.map(item =>
         <div className='OrderDetail'>
             {lineItems.length? 
             <>
-            <div className='hi'>
+            <div className='hi' draggable="true">
                 <div className='heading'>
                     <h3>New Order - {order.orderId}</h3>
                 </div>
@@ -26,6 +26,7 @@ const lineItems = order.lineItems.map(item =>
                     className='total'
                     onClick={handleCheckOut}
                     disabled={!lineItems.length}
+                    style={{ backgroundColor:"#152238", color:"white"}}
                     >Checkout</button>
                     &nbsp;&nbsp;&nbsp;
                     <span>QTY: {order.totalQty}</span>
