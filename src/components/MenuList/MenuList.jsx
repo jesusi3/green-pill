@@ -12,7 +12,10 @@ export default function MenuList({menuItems, handleAddToOrder}) {
         
         );
     return(
-        <div className="List">
+        // <div className="List">
+        //     {items}
+        // </div>
+        <div className="row mt-2 g-4">
             {items}
         </div>
     );

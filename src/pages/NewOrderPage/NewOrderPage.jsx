@@ -39,7 +39,6 @@ export default function NewOrderPage() {
     }, []);
     
     async function handleAddToOrder(itemId) {
-      // alert(`add item: ${itemId}`)
       const updatedCart = await ordersAPI.addToCart(itemId);
       setCart(updatedCart)
     }
