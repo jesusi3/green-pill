@@ -26,6 +26,11 @@ Green Pill is a browser-based ECommerced application for purchases gym related i
 ### Link to the ECommerce Application
 <a href="https://green-pill.herokuapp.com/orders/new" target="_blank">GREEN PILL</a>
 
+### Link to Trello Board
+
+<a href="https://trello.com/b/y0SkAvv0/capstone" target="_blank">Trello Board</a>
+
+
 ## Next Steps/ ICE box
 
 - A search functionality where you can search specific manga
