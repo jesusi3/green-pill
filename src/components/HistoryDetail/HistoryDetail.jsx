@@ -17,7 +17,7 @@ export default function HistoryDetail({selectedOrder, setSelectedOrder}) {
                     <span><h3>Order Id - {selectedOrder.orderId}</h3></span>
                     <span> <button onClick={() => setSelectedOrder(null)}>X</button></span>
                 </div>
-                <main className='item1-order'>
+                <main className='item1-history'>
                     {order}
                 </main>    
                     <span>Total:{selectedOrder.orderTotal.toFixed(2)}</span>

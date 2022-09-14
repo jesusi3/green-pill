@@ -14,11 +14,13 @@ export default function SupplementCat({categories, activeCat, setActiveCat}) {
 
     return (
         <>
-          <div className="justify-content-center">
+          <div className=" justify-content-center">
             <ul className="navbar justify-content-center bg-light">
                 {cats}
-            </ul>    
-            <h1 >Supplements</h1>
+            </ul>   
+            <div className=" d-flex justify-content-center">
+            <h1 className="justify-content-center">Supplements</h1>
+              </div> 
         </div>
         </>
     );

@@ -1,8 +1,9 @@
 import LineItem from '../LineItem/LineItem';
 import './OrderDetail.css';
 export default function OrderDetail({order, handleChangeQty, handleCheckOut}) {
+
     if(!order) return null;
-const lineItems = order.lineItems.map(item =>
+    const lineItems = order.lineItems.map(item =>
     <LineItem 
     key={item._id}
     lineItem={item}
@@ -10,12 +11,11 @@ const lineItems = order.lineItems.map(item =>
     handleChangeQty={handleChangeQty}
     />
     )
-
     return (
         <div className='OrderDetail'>
             {lineItems.length? 
             <>
-            <div className='hi' draggable="true">
+            <div className='hi' >
                 <div className='heading'>
                     <h3>New Order - {order.orderId}</h3>
                 </div>
@@ -38,4 +38,5 @@ const lineItems = order.lineItems.map(item =>
             }
         </div>
     );
+
 }

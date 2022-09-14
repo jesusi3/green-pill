@@ -2,10 +2,21 @@
 .item-p1 {
     margin: 4px;
     border: 2px solid black;
+    justify-content: center;
+}
+
+.people {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
 }
 
 
 .name {
+    text-align: center;
     color: black;
     font-size: 2vh;
 }

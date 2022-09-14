@@ -55,7 +55,9 @@ export default function NewOrderPage() {
  
   return (
     <div className="container-fluid">
-      <button onClick={() => setMainCat(!mainCat)} type="button" className="btn btn-dark btn-sm">{mainCat ? 'Equipment' : 'Supplements'}</button>
+      <div className='button-cat' style={{display: 'flex', justifyContent:'center'}}>
+     <button onClick={() => setMainCat(!mainCat)} type="button" className="btn btn-dark btn-lg">{mainCat ? 'Equipment' : 'Supplements'}</button>
+      </div>
       <OrderDetail 
       order={cart}
       handleChangeQty={handleChangeQty}
