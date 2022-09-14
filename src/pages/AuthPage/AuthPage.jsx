@@ -33,7 +33,7 @@ export default function AuthPage({setUser}) {
          
             }
         </div>
-        <h3 className="toggle-login" onClick={() => setShowLogin(!showLogin)}>{showLogin ? 'SIGNUP' : 'LOGIN'}</h3>
+        <h3 className="toggle-login" onClick={() => setShowLogin(!showLogin)} style={{color:'white'}}>{showLogin ? 'SIGNUP' : 'LOGIN'}</h3>
       </div>
     </main>
   );
