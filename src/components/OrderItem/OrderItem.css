@@ -3,4 +3,22 @@
     list-style: none;
     border: 2px solid pink;
     height: 12vh;
+    font-size: 2vmin;
+}
+
+.order-paid-container{ 
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-paid-item {
+    margin-left: 1em;
+    display: flex-end;
+}
+
+.order-paid-item-right {
+    float: right;
+    text-align: end;
+    display: flex-end;
+    margin-right: 1em;
 }

@@ -19,8 +19,8 @@ export default function SupplementCat({categories, activeCat, setActiveCat}) {
                 {cats}
             </ul>   
             <div className=" d-flex justify-content-center">
-            <h1 className="justify-content-center">Supplements</h1>
-              </div> 
+              <h1 className="justify-content-center">Supplements</h1>
+            </div> 
         </div>
         </>
     );

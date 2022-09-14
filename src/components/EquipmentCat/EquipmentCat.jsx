@@ -14,10 +14,14 @@ export default function EquipmentCat({categories, activeCat, setActiveCat}) {
 
     return (
         <>
-        <ul className="navbar justify-content-center bg-light">
-            {cats}
-        </ul>    
-        <h1>Equipment</h1>
+        <div className=" justify-content-center">
+            <ul className="navbar justify-content-center bg-light">
+                {cats}
+            </ul>   
+            <div className=" d-flex justify-content-center">
+              <h1 className="justify-content-center">Equipment</h1>
+            </div> 
+        </div>
         </>
     );
 

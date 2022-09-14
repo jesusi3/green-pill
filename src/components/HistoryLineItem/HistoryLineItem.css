@@ -1,4 +1,12 @@
 .line-item {
     border: 2px solid pink;
     margin: 5px;
+    color: white;
+    display: grid;
+    grid-template-columns: 1.5fr 6fr;
+}
+
+.column-rows {
+    display: grid;
+    grid-template-rows: auto;
 }

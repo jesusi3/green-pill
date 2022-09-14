@@ -1,5 +1,5 @@
 .hi {
-    border: solid 4px #FCCC4E;
+    border: solid 4px #152238;
     
     position: fixed;
     right: 3%;
@@ -14,12 +14,13 @@
     margin-left: -300px;
     border-radius: 5px;
     opacity: 0.9;
-    
+    font-size: 3vmin;
 }
+
 
 .total {
   
-    font-size: 2vmin;
+    font-size: 3vmin;
 }
 .item1-order {
     height: 210px;
