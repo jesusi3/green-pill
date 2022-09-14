@@ -13,30 +13,30 @@ export default function NavBar({user, setUser}) {
   return (
     <div>
     
-    <nav>
-      <div className='nav-bar'>
+      <nav>
+        <div className='nav-bar'>
+          <div className='item-container'>
+            <Link to='#' ><img src="https://cdn-icons-png.flaticon.com/512/211/211848.png" alt="" style={{height:"3vw"}}/></Link> 
+            </div>  
+          <div className='item-container'>
+            <Link to='/orders' ><FaIcons.FaHistory/> Order History</Link>
+            </div>  
         <div className='item-container'>
-          <Link to='#' ><FaIcons.FaHome/> Home</Link> 
+          <Link to='/orders/new'><FaIcons.FaShoppingBasket/> New Order</Link>
+          
           </div>  
-        <div className='item-container'>
-          <Link to='/orders' ><FaIcons.FaHistory/> Order History</Link>
-          </div>  
-      <div className='item-container'>
-        <Link to='/orders/new'><FaIcons.FaShoppingBasket/> New Order</Link>
+        </div>
         
+        <div id='item-container-end'>
+          <div className='item-container' id="user">
+            welcome, {user.name}
+          </div>  
+          <div className='item-container'>
+            <Link to='' onClick={handleLogOut} >SignOut <FaIcons.FaSignOutAlt/></Link>
+          </div>  
         </div>  
-       
-      <div id='item-container-end'>
-        <div className='item-container'  id="user">
-          welcome, {user.name}
-          </div>  
-        <div className='item-container'>
-          <Link to='' onClick={handleLogOut} >SignOut <FaIcons.FaSignOutAlt/></Link>
-          </div>  
-      </div>  
 
-      </div>
-    </nav>
+      </nav>
     </div>
   );
 }
